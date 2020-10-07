@@ -1,0 +1,68 @@
+<!--
+ * @charset: UTF-8
+ * @Author: fg
+ * @Date: 2020-10-06 19:27:37
+ * @LastEditTime: 2020-10-07 08:57:02
+ * @LastEditors: fg
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重置密码</title>
+  <!-- 引入layui样式 -->
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+  <!-- 引入user_pwd 样式 -->
+  <link rel="stylesheet" href="/assets/css/user/user_pwd.css">
+</head>
+
+<body class="layui-layout-body">
+  <!-- 卡片面板 -->
+  <div class="layui-card">
+    <div class="layui-card-header">修改密码</div>
+    <div class="layui-card-body">
+      <!-- 表单区域 -->
+      <form class="layui-form" id="form_pwd">
+        <div class="layui-form-item">
+          <label class="layui-form-label" for="oldPwd">原密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="oldPwd" id="oldPwd" required lay-verify="required|pwd" placeholder="请输入原密码"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label" for="newPwd">新密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="newPwd" id="newPwd" required lay-verify="required|pwd|samePwd"
+              placeholder="请输入新密码" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label" for="rnewPwd">确认新密码</label>
+          <div class="layui-input-block">
+            <input type="password" name="rnewPwd" id="rnewPwd" required lay-verify="required|pwd|rpwd"
+              placeholder="请确认新密码" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">修改密码</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 引入 layui 脚本文件 -->
+  <script src="/assets/lib/layui/layui.all.js"></script>
+  <!-- 引入 jQuery  -->
+  <script src="/assets/lib/jquery.js"></script>
+  <!-- 引入 ajax 请求配置脚本 -->
+  <script src="/assets/js/baseAPI.js"></script>
+  <!-- 引入 user_pwd 脚本文件 -->
+  <script src="/assets/js/user/user_pwd.js"></script>
+</body>
+
+</html>

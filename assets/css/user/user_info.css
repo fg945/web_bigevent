@@ -1,0 +1,15 @@
+/*
+ * @charset: UTF-8
+ * @Author: fg
+ * @Date: 2020-10-06 16:19:41
+ * @LastEditTime: 2020-10-06 16:32:48
+ * @LastEditors: fg
+ */
+
+body {
+    padding: 15px;
+    background-color: #f2f3f5;
+}
+.layui-form {
+    width: 30%;
+}

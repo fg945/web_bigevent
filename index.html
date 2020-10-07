@@ -2,7 +2,7 @@
  * @charset: UTF-8
  * @Author: fg
  * @Date: 2020-09-27 14:24:37
- * @LastEditTime: 2020-10-06 15:13:28
+ * @LastEditTime: 2020-10-07 10:15:34
  * @LastEditors: fg
 -->
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>layout 后台大布局 - Layui</title>
+    <title>web大事件-后台首页</title>
     <!-- 引入layui样式文件 -->
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
     <!-- 引入第三方图标库 -->
@@ -35,9 +35,9 @@
                         个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <dd><a href="/user/user_info.html" target="fm">基本资料</a></dd>
+                        <dd><a href="/user/user_avatar.html" target="fm">更换头像</a></dd>
+                        <dd><a href="/user/user_pwd.html" target="fm">重置密码</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -68,9 +68,12 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 基本资料</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 更换头像</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i> 重置密码</a></dd>
+                            <dd><a href="/user/user_info.html" target="fm"><i class="layui-icon layui-icon-app"></i>
+                                    基本资料</a></dd>
+                            <dd><a href="/user/user_avatar.html" target="fm"><i class="layui-icon layui-icon-app"></i>
+                                    更换头像</a></dd>
+                            <dd><a href="/user/user_pwd.html" target="fm"><i class="layui-icon layui-icon-app"></i>
+                                    重置密码</a></dd>
                         </dl>
                     </li>
                 </ul>
@@ -84,7 +87,7 @@
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            © fg
+            © fg-孤勇赠余生
         </div>
     </div>
     <!-- 引入layui脚本文件 -->
