@@ -2,13 +2,20 @@
  * @charset: UTF-8
  * @Author: fg
  * @Date: 2020-10-06 19:28:53
- * @LastEditTime: 2020-10-06 19:39:32
+ * @LastEditTime: 2020-10-08 16:01:24
  * @LastEditors: fg
  */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     padding: 15px;
     background-color: #f2f3f5;
 }
+
 .layui-form {
-    width: 30%;
+    width: 500px;
 }

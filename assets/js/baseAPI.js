@@ -2,7 +2,7 @@
  * @charset: UTF-8
  * @Author: fg
  * @Date: 2020-10-05 10:29:22
- * @LastEditTime: 2020-10-06 15:46:24
+ * @LastEditTime: 2020-10-08 11:29:18
  * @LastEditors: fg
  */
 $(function () {
@@ -18,7 +18,7 @@ $(function () {
 
         // 全局挂载 complete 回调函数
         options.complete = function (res) {
-            if (res.responseJSON.status == 1) {
+            if (res.responseJSON.status == 1 && res.responseJSON.message == '身份认证失败！') {
                 // 1. 清空 token
                 localStorage.removeItem('token');
                 // 2. 强制跳转到登录界面

@@ -2,7 +2,7 @@
  * @charset: UTF-8
  * @Author: fg
  * @Date: 2020-10-06 19:29:42
- * @LastEditTime: 2020-10-07 09:13:24
+ * @LastEditTime: 2020-10-09 17:47:36
  * @LastEditors: fg
  */
 $(function () {
@@ -44,6 +44,7 @@ $(function () {
                 layui.layer.msg(res.message);
                 // 重置表单
                 $('#form_pwd')[0].reset();
+                window.parent.location.href = '/login.html';
             }
         });
     });

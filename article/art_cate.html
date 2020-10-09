@@ -1,0 +1,136 @@
+<!--
+ * @charset: UTF-8
+ * @Author: fg
+ * @Date: 2020-10-07 14:16:00
+ * @LastEditTime: 2020-10-08 15:58:43
+ * @LastEditors: fg
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章类别</title>
+  <!-- 引入 layui 样式 -->
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+  <!-- 引入 art_cate 样式 -->
+  <link rel="stylesheet" href="/assets/css/article/art_cate.css">
+</head>
+
+<body>
+  <!-- 卡片面板区域 -->
+  <div class="layui-card">
+    <div class="layui-card-header">
+      <span>文章类别管理</span>
+      <button type="button" class="layui-btn layui-btn-normal layui-btn-sm" id="btnAddCate">添加类别</button>
+    </div>
+    <div class="layui-card-body">
+      <table class="layui-table">
+        <colgroup>
+          <col>
+          <col>
+          <col width="300">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>分类名称</th>
+            <th>分类别名</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tb">
+          <tr>
+            <td>贤心</td>
+            <td>2016-11-29</td>
+            <td>人生就像是一场修行</td>
+          </tr>
+          <tr>
+            <td>许闲心</td>
+            <td>2016-11-28</td>
+            <td>于千万人之中遇见你所遇见的人</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- 定义文章类别模板引擎 -->
+  <script type="text/html" id="tpl_tab">
+        {{each data}}
+        <tr>
+            <td>{{$value.name}}</td>
+            <td>{{$value.alias}}</td>
+            <td>
+                <button type="button" class="layui-btn layui-btn-xs btn-edit" data-Id="{{$value.Id}}">
+                    <i class="layui-icon layui-icon-edit"></i>编辑
+                </button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-Id="{{$value.Id}}">
+                    <i class="layui-icon layui-icon-delete"></i>删除
+                </button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
+  <!-- 添加类别弹出层 -->
+  <script type="text/html" id="dialog_add">
+        <form class="layui-form dialog" id="form_add">
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="name">分类名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" id="name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="alias">分类别名</label>
+            <div class="layui-input-block">
+              <input type="text" name="alias" id="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">确认添加</button>
+              <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+          </div>
+        </form>
+    </script>
+
+  <!-- 编辑弹出层 -->
+  <script type="text/html" id="dialog_edit">
+        <form class="layui-form dialog" id="form_edit" lay-filter="form-edit">
+          <!-- 隐藏域，保存Id的值 -->
+          <input type="hidden" name="Id">
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="name">分类名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" id="name" required  lay-verify="required" placeholder="请输入分类名称" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="alias">分类别名</label>
+            <div class="layui-input-block">
+              <input type="text" name="alias" id="alias" required  lay-verify="required" placeholder="请输入分类别名" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">确认修改</button>
+            </div>
+          </div>
+        </form>
+    </script>
+
+  <!-- 引入 layui js文件 -->
+  <script src="/assets/lib/layui/layui.all.js"></script>
+  <!-- 引入 jQuery js文件 -->
+  <script src="/assets/lib/jquery.js"></script>
+  <!-- 导入模板引擎 -->
+  <script src="/assets/lib/template-web.js"></script>
+  <!-- 引入 ajax 请求配置文件 -->
+  <script src="/assets/js/baseAPI.js"></script>
+  <!-- 引入 art_cate js文件 -->
+  <script src="/assets/js/article/art_cate.js"></script>
+</body>
+
+</html>
